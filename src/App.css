@@ -16,15 +16,6 @@
   position: relative;
   z-index: 5;
 }
-.brand {
-  font-family: Manrope, sans-serif;
-  font-size: 34px;
-  font-weight: 800;
-  letter-spacing: -3px;
-}
-.brand span {
-  color: #96969b;
-}
 .site-header nav {
   display: flex;
   gap: 32px;
@@ -208,32 +199,6 @@
   border-radius: 50%;
   background: #c8c8cb;
   box-shadow: 0 0 0 4px #ffffff09;
-}
-.monogram {
-  font-family: Manrope, sans-serif;
-  font-size: 144px;
-  letter-spacing: -28px;
-  font-weight: 800;
-  line-height: 1.5;
-  padding-left: 26px;
-  color: #dbdbde;
-  transform: skewY(-7deg);
-  text-shadow:
-    3px 5px 0 #55555b,
-    7px 9px 0 #252529;
-}
-.monogram > span {
-  color: #929298;
-}
-.monogram i {
-  position: absolute;
-  font-style: normal;
-  font-size: 36px;
-  letter-spacing: 0;
-  right: 28px;
-  top: 18px;
-  color: #efeff0;
-  text-shadow: none;
 }
 .identity-bottom {
   display: flex;
@@ -712,9 +677,6 @@ details a {
   padding-top: 28px;
   padding-bottom: 28px;
 }
-.site-footer .brand {
-  font-size: 26px;
-}
 .site-footer p {
   font-size: 10px;
   color: #aaaab4;
@@ -759,11 +721,6 @@ details a {
   .identity-card {
     height: 315px;
   }
-  .monogram {
-    font-size: 120px;
-    letter-spacing: -25px;
-    padding-left: 20px;
-  }
   .identity-bottom {
     padding: 17px;
   }
@@ -806,9 +763,6 @@ details a {
   }
   .site-header {
     height: 78px;
-  }
-  .brand {
-    font-size: 30px;
   }
   .header-contact {
     display: none;
@@ -879,17 +833,6 @@ details a {
     transform: none;
     max-width: 420px;
     align-self: center;
-  }
-  .monogram {
-    position: absolute;
-    font-size: 145px;
-    top: 7px;
-    left: 50%;
-    transform: translateX(-60%) skewY(-7deg);
-    letter-spacing: -30px;
-  }
-  .monogram i {
-    display: none;
   }
   .identity-top {
     position: relative;
@@ -1242,5 +1185,93 @@ details a {
   }
   .repository-banner strong {
     font-size: 22px;
+  }
+}
+
+/* Personal identity: full name with an abstract code symbol. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.personal-mark {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #e7e7ec;
+}
+.brand-name {
+  font-family: Manrope, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+  color: #eeeef2;
+}
+.brand-name > span {
+  display: block;
+  margin-top: 4px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #aaaab5;
+}
+.personal-signature {
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.personal-signature .personal-mark {
+  width: 112px;
+  height: 112px;
+  filter: drop-shadow(0 8px 6px #0004);
+}
+.personal-signature > span {
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  color: #dddde4;
+}
+.site-footer .personal-mark {
+  width: 28px;
+  height: 28px;
+}
+.site-footer .brand-name {
+  font-size: 16px;
+}
+.site-footer .brand-name > span {
+  font-size: 9px;
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .personal-signature {
+    height: 174px;
+  }
+  .personal-signature .personal-mark {
+    width: 90px;
+    height: 90px;
+  }
+  .site-header nav {
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .personal-signature {
+    height: 123px;
+    gap: 8px;
+  }
+  .personal-signature .personal-mark {
+    width: 76px;
+    height: 76px;
+  }
+  .personal-signature > span {
+    font-size: 12px;
+  }
+  .site-footer .brand {
+    gap: 7px;
   }
 }

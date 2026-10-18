@@ -91,6 +91,44 @@ function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
+function PersonalMark() {
+  return (
+    <svg
+      className="personal-mark"
+      viewBox="0 0 100 100"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M32 24 8 50l24 26"
+        stroke="currentColor"
+        strokeWidth="7"
+        strokeLinejoin="miter"
+      />
+      <path
+        d="m68 24 24 26-24 26"
+        stroke="currentColor"
+        strokeWidth="7"
+        strokeLinejoin="miter"
+        opacity=".45"
+      />
+      <path d="M61 12 39 88" stroke="currentColor" strokeWidth="7" />
+    </svg>
+  );
+}
+
+function PersonalBrand() {
+  return (
+    <>
+      <PersonalMark />
+      <span className="brand-name">
+        micael<span>vasconcelos</span>
+      </span>
+    </>
+  );
+}
+
 function ProjectCard({ project }) {
   return (
     <article className="project-card">
@@ -187,7 +225,7 @@ function App() {
           href="#inicio"
           aria-label="Micael Vasconcelos, início"
         >
-          mv<span>.</span>
+          <PersonalBrand />
         </a>
         <button
           className="menu-toggle"
@@ -260,9 +298,9 @@ function App() {
                 <span>PERFIL / 2026</span>
                 <span className="status-dot" />
               </div>
-              <div className="monogram" aria-hidden="true">
-                M<span>V</span>
-                <i>↗</i>
+              <div className="personal-signature">
+                <PersonalMark />
+                <span>Micael Vasconcelos</span>
               </div>
               <div className="identity-bottom">
                 <span>
@@ -487,7 +525,7 @@ function App() {
       </main>
       <footer className="site-footer">
         <a className="brand" href="#inicio" aria-label="Voltar ao início">
-          mv.
+          <PersonalBrand />
         </a>
         <p>
           Micael Vasconcelos <span>© {new Date().getFullYear()}</span>
