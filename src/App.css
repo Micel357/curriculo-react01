@@ -70,7 +70,6 @@
 .section-label,
 .location,
 .project-meta,
-.art-caption,
 .identity-top,
 .identity-bottom,
 .project-toolbar > span {
@@ -388,158 +387,50 @@
 .project-card:hover {
   border-color: #666670;
 }
-.project-art {
-  height: 260px;
-  background: #232327;
-  position: relative;
+.repository-banner {
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+  padding: 28px;
+  background: linear-gradient(125deg, #303036, #202024);
+  border-bottom: 1px solid #424248;
+  transition: background 0.2s;
+}
+.repository-banner:hover {
+  background: #35353c;
+}
+.repository-kicker {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-bottom: 1px solid #3a3a40;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #c0c0ca;
 }
-.art-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(#ffffff04 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff04 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse, #000, transparent);
-}
-.art-01 {
-  background: radial-gradient(ellipse at 50% 45%, #3a3a40, #1b1b1f);
-}
-.automation-diagram {
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  width: 90%;
-  justify-content: center;
-}
-.automation-diagram > span {
-  font-size: 7px;
-  letter-spacing: 0.8px;
-  border: 1px solid #55555c;
-  padding: 9px;
-  background: #242428;
-}
-.automation-diagram i {
-  height: 1px;
-  flex: 1;
-  background: #696972;
-  min-width: 15px;
-  position: relative;
-}
-.automation-diagram i:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: -2px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #aaa;
-}
-.automation-diagram strong {
-  font-family: Manrope, sans-serif;
-  border: 1px solid #6a6a72;
-  border-radius: 10px;
-  box-shadow:
-    0 14px 35px #0005,
-    inset 0 1px #ffffff20;
-  background: linear-gradient(140deg, #55555e, #29292e);
-  font-size: 28px;
-  letter-spacing: -1.5px;
-  padding: 24px 18px;
-  position: relative;
-}
-.automation-diagram strong > span {
-  color: #a3a3ac;
-}
-.automation-diagram b {
-  position: absolute;
-  right: 10px;
-  top: 4px;
-  font-size: 13px;
-  color: #aaa;
-}
-.art-caption {
-  position: absolute;
-  bottom: 17px;
-  font-size: 7px;
-  color: #aaaab5;
-  letter-spacing: 2px;
-}
-.catalog-diagram {
-  width: 245px;
-  background: linear-gradient(150deg, #414148, #29292e);
-  border: 1px solid #666670;
-  border-radius: 7px;
-  padding: 14px;
-  transform: perspective(600px) rotateY(-10deg) rotateX(6deg) rotateZ(-4deg);
-  box-shadow: 18px 20px 30px #0004;
-  transition: transform 0.4s;
-}
-.project-card:hover .catalog-diagram {
-  transform: perspective(600px) rotateY(0) rotateX(0) rotateZ(0);
-}
-.catalog-diagram > div {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  border-bottom: 1px solid #ffffff18;
-  padding-bottom: 12px;
-}
-.catalog-diagram small {
-  font-size: 13px;
-  font-weight: 700;
-}
-.catalog-diagram > div > span {
-  font-size: 6px;
-  letter-spacing: 1px;
-}
-.catalog-diagram b {
+.repository-kicker > span:last-child {
   margin-left: auto;
+  font-size: 20px;
 }
-.catalog-diagram section {
+.repository-owner {
+  color: #a7a7b2;
+  font-size: 12px;
+  margin-top: 25px;
+}
+.repository-banner strong {
+  font-family: Manrope, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  margin: 5px 0 22px;
+}
+.repository-access {
   display: flex;
-  gap: 9px;
-  margin: 14px 0;
-}
-.catalog-diagram section i {
-  width: 33%;
-  border: 1px solid #686872;
-  padding: 7px;
-  border-radius: 3px;
-}
-.catalog-diagram section b {
-  display: block;
-  height: 31px;
-  background: linear-gradient(130deg, #777780, #4d4d55);
-  border-radius: 2px;
-}
-.catalog-diagram section span {
-  display: block;
-  width: 80%;
-  height: 3px;
-  background: #84848f;
-  margin-top: 7px;
-}
-.catalog-diagram section span:last-child {
-  width: 45%;
-  background: #606069;
-}
-.catalog-diagram footer {
-  display: flex;
-  gap: 9px;
-}
-.catalog-diagram footer span {
-  height: 18px;
-  background: #ffffff0a;
-  border: 1px solid #ffffff12;
-  flex: 1;
-  border-radius: 2px;
+  justify-content: space-between;
+  margin-top: auto;
+  font-size: 11px;
+  color: #c3c3cc;
 }
 .project-body {
   padding: 27px;
@@ -1082,9 +973,6 @@ details a {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  .project-art {
-    height: 240px;
-  }
   .project-body {
     padding: 23px;
   }
@@ -1142,17 +1030,6 @@ details a {
   min-width: 0;
 }
 @media (max-width: 360px) {
-  .automation-diagram strong {
-    font-size: 23px;
-    padding: 22px 12px;
-  }
-  .automation-diagram > span {
-    font-size: 6px;
-    padding: 7px;
-  }
-  .automation-diagram i {
-    min-width: 8px;
-  }
   .contact h2 {
     font-size: 34px;
   }
@@ -1177,7 +1054,6 @@ details a {
     transition: none !important;
   }
   .identity-card,
-  .catalog-diagram,
   .button:hover {
     transform: none;
   }
@@ -1198,7 +1074,7 @@ details a {
   .identity-card,
   .hero-bottom,
   .project-toolbar,
-  .project-art,
+  .repository-banner,
   .contact-actions,
   .contact-links,
   .site-footer,
@@ -1356,5 +1232,15 @@ details a {
   }
   @page {
     margin: 15mm;
+  }
+}
+
+@media (max-width: 700px) {
+  .repository-banner {
+    padding: 23px;
+    min-height: 210px;
+  }
+  .repository-banner strong {
+    font-size: 22px;
   }
 }

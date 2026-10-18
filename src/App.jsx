@@ -5,22 +5,6 @@ const email = "micelvasconcelos66@gmail.com";
 const projects = [
   {
     id: "01",
-    name: "Autobot",
-    subtitle: "Auto Sales Bot",
-    category: "Automação",
-    description:
-      "Da gestão de produtos à publicação agendada. Um painel conectado a um worker Python para organizar ofertas e acompanhar cada envio.",
-    tags: ["React", "Python", "PostgreSQL", "APIs"],
-    details: [
-      "Painel com catálogo, comunidades, fila de publicação e histórico de postagens.",
-      "Worker Python para processar agendamentos e publicar em grupos e canais autorizados do Telegram.",
-      "Autenticação, políticas de acesso por proprietário e registros de auditoria no Supabase/Postgres.",
-      "Tratamento de falhas de envio com revisão para evitar publicações duplicadas.",
-    ],
-    note: "Projeto de desenvolvimento · código privado",
-  },
-  {
-    id: "02",
     name: "Vitrine & Clientes",
     subtitle: "Cadastro de produtos e clientes",
     category: "Full stack",
@@ -35,6 +19,23 @@ const projects = [
     ],
     note: "Projeto acadêmico · repositório público",
     url: "https://github.com/Micel357/cadastro-produtos-clientes",
+  },
+  {
+    id: "02",
+    name: "ECOA Dashboard",
+    subtitle: "Indicadores ESG · Squad 2",
+    category: "Front-end",
+    description:
+      "Interface para organizar a jornada de gestão ambiental, social e de governança, com navegação entre indicadores, questionários e planos de ação.",
+    tags: ["React", "React Router", "Vite", "CSS"],
+    details: [
+      "Projeto em equipe com telas organizadas por funcionalidade e componentes reutilizáveis.",
+      "Rotas para dashboard, questionários ESG, plano de ação, relatórios e gestão de equipe.",
+      "Estados de interface e navegação implementados em React com React Router.",
+      "Escopo atual: front-end. O repositório não contém um back-end próprio; a tela de gráficos inclui representações demonstrativas.",
+    ],
+    note: "Projeto em equipe · repositório público",
+    url: "https://github.com/Micel357/ECOA-Dashboard---Squad-2",
   },
 ];
 const experiences = [
@@ -93,48 +94,22 @@ function Arrow() {
 function ProjectCard({ project }) {
   return (
     <article className="project-card">
-      <div className={`project-art art-${project.id}`} aria-hidden="true">
-        <div className="art-grid" />
-        {project.id === "01" ? (
-          <div className="automation-diagram">
-            <span>CATÁLOGO</span>
-            <i />
-            <strong>
-              auto<span>bot</span>
-              <b>↗</b>
-            </strong>
-            <i />
-            <span>PUBLICAÇÃO</span>
-          </div>
-        ) : (
-          <div className="catalog-diagram">
-            <div>
-              <small>V / C</small>
-              <span>PRODUTOS & CLIENTES</span>
-              <b>↗</b>
-            </div>
-            <section>
-              {[1, 2, 3].map((n) => (
-                <i key={n}>
-                  <b />
-                  <span />
-                  <span />
-                </i>
-              ))}
-            </section>
-            <footer>
-              <span />
-              <span />
-              <span />
-            </footer>
-          </div>
-        )}
-        <span className="art-caption">
-          {project.id === "01"
-            ? "AUTOMAÇÃO COM CONTROLE"
-            : "ORGANIZAÇÃO EM CADA DETALHE"}
+      <a
+        className="repository-banner"
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Abrir repositório ${project.name} no GitHub`}
+      >
+        <span className="repository-kicker">
+          <span aria-hidden="true">⌘</span> REPOSITÓRIO NO GITHUB <Arrow />
         </span>
-      </div>
+        <span className="repository-owner">Micel357 /</span>
+        <strong>{project.url.split("/").pop()}</strong>
+        <span className="repository-access">
+          Código público <span aria-hidden="true">↗</span>
+        </span>
+      </a>
       <div className="project-body">
         <div className="project-meta">
           <span>PROJETO {project.id}</span>
@@ -348,14 +323,14 @@ function App() {
               </h2>
             </div>
             <p>
-              Experiências que conectam
+              Projetos reais, código aberto.
               <br />
-              código a problemas reais.
+              Conheça os repositórios no GitHub.
             </p>
           </div>
           <div className="project-toolbar">
             <div className="filters" role="group" aria-label="Filtrar projetos">
-              {["Todos", "Automação", "Full stack"].map((value) => (
+              {["Todos", "Full stack", "Front-end"].map((value) => (
                 <button
                   key={value}
                   aria-pressed={filter === value}

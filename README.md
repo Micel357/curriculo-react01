@@ -23,7 +23,7 @@ O `pnpm-lock.yaml` registra as versões utilizadas na validação desta reformul
 - `src/index.css`: estilos globais e tipografia, com fontes alternativas locais caso o Google Fonts não esteja disponível.
 - `index.html`: idioma, título e descrição para busca.
 
-O conteúdo foi atualizado a partir do currículo fornecido pelo titular e dos projetos Auto Sales Bot e Cadastro de Produtos e Clientes. As vivências em IntenseGP, Accenture e Move-Up são apresentadas no contexto da Residência Tecnológica do Porto Digital. O Autobot tem código privado; a página apresenta apenas uma descrição profissional, sem expor código ou dados operacionais. As ilustrações dos projetos são composições visuais em CSS, não capturas dos sistemas.
+O conteúdo foi atualizado a partir do currículo fornecido pelo titular e dos projetos Cadastro de Produtos e Clientes e ECOA Dashboard — Squad 2. As vivências em IntenseGP, Accenture e Move-Up são apresentadas no contexto da Residência Tecnológica do Porto Digital. Os projetos selecionados têm código público e links diretos para os repositórios. Os cartões apresentam referências reais do GitHub, sem ilustrações que simulem capturas dos sistemas. O ECOA é apresentado com seu escopo atual de front-end e trabalho em equipe.
 
 ## Interações
 
