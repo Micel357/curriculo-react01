@@ -32,3 +32,7 @@ Filtros de projetos, detalhes expansíveis acessíveis pelo teclado, navegação
 ## Validação
 
 Build de produção e ESLint. Verificação no navegador em 320, 390, 768 e 1440 px, incluindo filtros, detalhes, menu, cópia de e-mail (sucesso e falha), acionamento da impressão, conteúdo em modo de impressão, movimento reduzido e ausência de erros JavaScript.
+
+## Efeito do cursor
+
+`src/CursorTrail.jsx` desenha um rastro de pixels e uma pequena dispersão ao clicar. O canvas não intercepta interações, limita as partículas a 48 e só mantém a animação enquanto há pixels visíveis. O efeito pode ser desligado no rodapé e fica desativado em telas de toque, impressão e quando o sistema solicita movimento reduzido. Os eventos e quadros são limpos ao desmontar o componente.

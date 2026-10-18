@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CursorTrail from "./CursorTrail.jsx";
 import "./App.css";
 
 const email = "micelvasconcelos66@gmail.com";
@@ -183,6 +184,7 @@ function ProjectCard({ project }) {
 }
 
 function App() {
+  const [trailEnabled, setTrailEnabled] = useState(true);
   const [filter, setFilter] = useState("Todos");
   const [active, setActive] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -530,8 +532,16 @@ function App() {
         <p>
           Micael Vasconcelos <span>© {new Date().getFullYear()}</span>
         </p>
+        <button
+          className="trail-toggle"
+          aria-pressed={trailEnabled}
+          onClick={() => setTrailEnabled(!trailEnabled)}
+        >
+          Rastro do cursor: {trailEnabled ? "ativo" : "desativado"}
+        </button>
         <a href="#inicio">De volta ao topo ↑</a>
       </footer>
+      <CursorTrail enabled={trailEnabled} />
     </>
   );
 }

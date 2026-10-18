@@ -1275,3 +1275,37 @@ details a {
     gap: 7px;
   }
 }
+
+/* Decorative pixels never intercept clicks or replace the system cursor. */
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.trail-toggle {
+  background: transparent;
+  border: 1px solid #45454d;
+  border-radius: 3px;
+  padding: 7px 10px;
+  color: #b5b5bf;
+  font-size: 10px;
+}
+.trail-toggle:hover {
+  background: #252529;
+  color: #eee;
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .cursor-trail,
+  .trail-toggle {
+    display: none;
+  }
+}
+@media print {
+  .cursor-trail,
+  .trail-toggle {
+    display: none;
+  }
+}
