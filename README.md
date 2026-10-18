@@ -1,29 +1,34 @@
-# Currículo em React
+# Micael Vasconcelos — currículo e portfólio
 
-Aplicação de currículo construída com React e Vite.
+Página pessoal em React e Vite com identidade visual em preto e cinza, apresentação profissional, projetos, trajetória, formação e competências.
 
-## Estrutura
+## Desenvolvimento
 
-```text
-.
-├── public/            # Arquivos servidos diretamente pelo Vite
-├── src/               # Componentes, estilos e recursos importados pela aplicação
-│   ├── assets/
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html          # Entrada da aplicação
-├── package.json        # Dependências e scripts
-├── package-lock.json
-└── vite.config.js
+Requer Node.js 20.19+ ou 22.12+ e pnpm.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm lint
+pnpm build
+pnpm preview
 ```
 
-Os arquivos de configuração do Vite e as dependências ficam na raiz, como esperado pelas ferramentas. Recursos importados pelo React ficam em `src/assets/`; arquivos acessados por URL ficam em `public/`.
+O `pnpm-lock.yaml` registra as versões utilizadas na validação desta reformulação. O build estático fica em `dist/`.
 
-## Executar
+## Conteúdo e manutenção
 
-```bash
-npm ci
-npm run dev
-```
+- `src/App.jsx`: dados de projetos, experiências, competências e contatos. Atualize período e previsão de conclusão ao evoluir a formação.
+- `src/App.css`: layout, estados interativos, adaptação para celulares e impressão.
+- `src/index.css`: estilos globais e tipografia, com fontes alternativas locais caso o Google Fonts não esteja disponível.
+- `index.html`: idioma, título e descrição para busca.
 
-Para gerar a versão de produção, execute `npm run build`. Para verificar o código, execute `npm run lint`.
+O conteúdo foi atualizado a partir do currículo fornecido pelo titular e dos projetos Auto Sales Bot e Cadastro de Produtos e Clientes. As vivências em IntenseGP, Accenture e Move-Up são apresentadas no contexto da Residência Tecnológica do Porto Digital. O Autobot tem código privado; a página apresenta apenas uma descrição profissional, sem expor código ou dados operacionais. As ilustrações dos projetos são composições visuais em CSS, não capturas dos sistemas.
+
+## Interações
+
+Filtros de projetos, detalhes expansíveis acessíveis pelo teclado, navegação para seções, menu mobile, links de contato e cópia de e-mail com retorno de sucesso ou falha. O botão Imprimir / salvar PDF abre a impressão do navegador, com estilos próprios e todos os projetos incluídos mesmo quando um filtro está ativo. A preferência do sistema por movimento reduzido é respeitada.
+
+## Validação
+
+Build de produção e ESLint. Verificação no navegador em 320, 390, 768 e 1440 px, incluindo filtros, detalhes, menu, cópia de e-mail (sucesso e falha), acionamento da impressão, conteúdo em modo de impressão, movimento reduzido e ausência de erros JavaScript.
